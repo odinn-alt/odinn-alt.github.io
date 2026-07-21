@@ -1438,7 +1438,7 @@ function mulberry32(seed) {
     },
     {
       q: 'What else has he built?',
-      a: 'You’re standing in the middle of it. The exam platform, the strategy gauntlet, and the listing generator on this page are all his. So are the work systems above me. I’m just the one that talks.'
+      a: 'You’re standing in the middle of it. The exam platform and the trading research console on this page are all his. So are the work systems above me. I’m just the one that talks.'
     },
     {
       q: 'Is he good to work with?',
@@ -1629,103 +1629,3 @@ function mulberry32(seed) {
   }
 })();
 
-/* ============================================================
-   7. STITCH WITCH · listing generator (void/bone/blood skin)
-   ============================================================ */
-(function () {
-  var picksBox = document.getElementById('sw-picks');
-  var out = document.getElementById('sw-out');
-  if (!picksBox || !out) return;
-
-  var PIECES = [
-    {
-      kind: 'Hand-bleached denim',
-      title: 'Hand-Bleached Sun & Moon Levi’s Jacket',
-      price: 78,
-      desc: 'A 90s Levi’s trucker jacket pulled from a thrift bin and reborn. Hand-bleached sun on the back, crescent moon on the chest pocket. Fabric-painted detail in deep burgundy and bone.',
-      details: ['Bleached by hand under low light', 'Detail painted with permanent fabric paint', 'Heat-set, machine washable cold inside out']
-    },
-    {
-      kind: 'Embroidered knit',
-      title: 'Embroidered Wildflower Cardigan',
-      price: 52,
-      desc: 'A soft vintage cardigan reworked with hand-embroidered wildflowers climbing the button placket. Quiet, warm, one of one.',
-      details: ['Hand-embroidered floral chain', 'Original buttons kept', 'Gentle wash, lay flat to dry']
-    },
-    {
-      kind: 'Painted tee',
-      title: 'Painted Phoenix Black Tee',
-      price: 42,
-      desc: 'A heavyweight black tee carrying a hand-painted phoenix across the back, done in bone and ember tones. Made to be worn, not framed.',
-      details: ['Painted freehand, no stencils', 'Heat-set fabric paint', 'Machine washable cold inside out']
-    }
-  ];
-
-  var phaseEl = document.getElementById('sw-phase');
-  var listing = document.getElementById('sw-listing');
-  var busy = false;
-
-  PIECES.forEach(function (p) {
-    var b = document.createElement('button');
-    b.className = 'sw-pick';
-    b.innerHTML = '<span class="sw-kind">' + p.kind + '</span><strong>' + p.title + '</strong>';
-    b.addEventListener('click', function () { if (!busy) run(p, b); });
-    picksBox.appendChild(b);
-  });
-
-  function run(p, btn) {
-    busy = true;
-    document.querySelectorAll('.sw-pick').forEach(function (x) { x.classList.remove('is-on'); });
-    btn.classList.add('is-on');
-    out.hidden = false;
-    listing.innerHTML =
-      '<div class="sw-title" id="sw-title"></div>' +
-      '<div class="sw-price" id="sw-price"></div>' +
-      '<div class="sw-desc" id="sw-desc"></div>' +
-      '<ul class="sw-details" id="sw-details"></ul>';
-
-    var phases = ['reading the photos…', 'checking condition + materials…', 'pricing against the catalog…'];
-    phaseEl.innerHTML = phases[0];
-    var start = Date.now();
-    var pt = setInterval(function () {
-      var pi = Math.floor((Date.now() - start) / 650);
-      if (pi < phases.length) {
-        phaseEl.innerHTML = phases[pi];
-      } else {
-        clearInterval(pt);
-        phaseEl.innerHTML = '<span class="done">✓ listing drafted, waiting for one human confirmation</span>';
-        write(p);
-      }
-    }, 120);
-  }
-
-  function type(el, text, speed, done) {
-    var start = Date.now();
-    var t = setInterval(function () {
-      var i = Math.floor((Date.now() - start) * 2 / speed);
-      el.textContent = text.slice(0, i);
-      if (i >= text.length) { clearInterval(t); if (done) done(); }
-    }, speed);
-  }
-
-  function write(p) {
-    var titleEl = document.getElementById('sw-title');
-    var priceEl = document.getElementById('sw-price');
-    var descEl = document.getElementById('sw-desc');
-    var detailsEl = document.getElementById('sw-details');
-
-    type(titleEl, p.title, 24, function () {
-      priceEl.textContent = '$' + p.price + ' · one of one';
-      type(descEl, p.desc, 12, function () {
-        p.details.forEach(function (d, i) {
-          setTimeout(function () {
-            var li = document.createElement('li');
-            li.textContent = d;
-            detailsEl.appendChild(li);
-            if (i === p.details.length - 1) busy = false;
-          }, 200 * (i + 1));
-        });
-      });
-    });
-  }
-})();

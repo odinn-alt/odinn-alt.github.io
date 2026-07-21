@@ -550,12 +550,6 @@ button { font-family: inherit; cursor: pointer; }
     #06070f;
 }
 
-.skin-sw {
-  --d-bg: #0b0b0d; --d-panel: #141417; --d-text: #ece5d6; --d-dim: #8b857a;
-  --d-line: rgba(236, 229, 214, 0.14); --d-accent: #d9503e; --d-good: #9caf88; --d-bad: #d9503e;
-  --d-btn-bg: #b23a2e; --d-btn-fg: #ece5d6; --d-soft: rgba(178, 58, 46, 0.14);
-}
-
 .skin-term {
   --d-bg: #0b0f0c; --d-panel: #101511; --d-text: #a8e6b6; --d-dim: #5f7a66;
   --d-line: #1d2a20; --d-accent: #7ee787; --d-good: #7ee787; --d-bad: #ffa657;
@@ -1918,64 +1912,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 .eve-chip:hover:not(:disabled) { border-color: var(--d-accent); color: var(--d-accent); }
 .eve-chip:disabled { opacity: 0.4; cursor: default; }
-
-.sw-picks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
-  gap: 9px;
-  padding: 15px 16px;
-}
-
-.sw-pick {
-  text-align: left;
-  border: 1px solid var(--d-line);
-  border-radius: 4px;
-  background: var(--d-panel);
-  padding: 11px 13px;
-  color: var(--d-text);
-  transition: border-color 0.15s;
-}
-.sw-pick:hover { border-color: var(--d-accent); }
-.sw-pick.is-on { border-color: var(--d-accent); background: var(--d-soft); }
-.sw-pick .sw-kind {
-  display: block;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--d-accent);
-  margin-bottom: 4px;
-}
-.sw-pick strong { font-size: 0.88rem; line-height: 1.35; display: block; font-weight: 500; }
-
-.sw-out { padding: 0 16px 16px; }
-
-.sw-phase {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--d-dim);
-  padding: 3px 0 11px;
-  min-height: 26px;
-}
-.sw-phase .done { color: var(--d-good); }
-
-.sw-listing {
-  border: 1px solid var(--d-line);
-  border-radius: 4px;
-  background: var(--d-panel);
-  padding: 17px 19px;
-}
-
-.sw-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
-  margin-bottom: 2px;
-  min-height: 1.4em;
-  color: var(--d-text);
-}
-.sw-price { font-family: var(--mono); font-size: 0.9rem; color: var(--d-accent); margin-bottom: 10px; }
-.sw-desc { font-size: 0.88rem; color: var(--d-dim); margin-bottom: 10px; min-height: 1.4em; line-height: 1.6; }
-.sw-details { font-size: 0.82rem; color: var(--d-dim); padding-left: 18px; }
-.sw-details li { margin-bottom: 3px; }
 
 /* ============ BACKGROUND ============ */
 .bg-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; }
