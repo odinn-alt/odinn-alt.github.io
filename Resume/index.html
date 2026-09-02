@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odinn McLoughlin · Resume</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Resume of Odinn W. McLoughlin: sales and marketing operations, software builder, Buffalo, NY.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' rx='14' fill='%23d9924f'/><text x='50' y='69' font-size='50' font-family='Arial' font-weight='bold' fill='%2314171c' text-anchor='middle'>O</text></svg>">
+<style>
+  /* Paper-first page: light, print-ready, self-contained. Same copper accent
+     as the portfolio, but on white so it prints and saves to PDF cleanly. */
+  :root {
+    --paper: #ffffff;
+    --ground: #e9e6e1;
+    --ink: #1a1d22;
+    --dim: #4c525b;
+    --faint: #7b818c;
+    --line: #d6d3cd;
+    --accent: #b8722f;
+    --accent-ink: #14171c;
+    --chrome: #14171c;
+    --chrome-ink: #e9ebef;
+    --chrome-dim: #a2aab6;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Site chrome above the sheet: back link and print button. */
+  .bar {
+    background: var(--chrome);
+    color: var(--chrome-ink);
+    border-bottom: 1px solid #2a313c;
+  }
+  .bar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    font-size: 0.88rem;
+  }
+  .bar a { color: var(--chrome-dim); }
+  .bar a:hover { color: var(--chrome-ink); text-decoration: none; }
+  .bar-actions { display: flex; gap: 14px; align-items: center; }
+  .bar button {
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 650;
+    color: var(--accent-ink);
+    background: #d9924f;
+    border: 0;
+    border-radius: 6px;
+    padding: 7px 16px;
+    cursor: pointer;
+  }
+  .bar button:hover { filter: brightness(1.1); }
+
+  /* The sheet. Letter proportions on screen, real Letter in print. */
+  .sheet {
+    background: var(--paper);
+    max-width: 860px;
+    margin: 28px auto 48px;
+    padding: 52px 60px 56px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.10);
+  }
+
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .head h1 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  .head .role { color: var(--dim); font-size: 0.98rem; margin-top: 6px; }
+  .contact {
+    list-style: none;
+    text-align: right;
+    font-size: 0.86rem;
+    color: var(--dim);
+    line-height: 1.55;
+    white-space: nowrap;
+  }
+  .contact a { color: var(--ink); }
+  .contact, .foot { overflow-wrap: anywhere; }
+
+  .summary { margin: 20px 0 6px; color: var(--ink); font-size: 0.95rem; }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 26px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 18px;
+    padding: 10px 0;
+    break-inside: avoid;
+  }
+  .row + .row { border-top: 1px solid var(--line); }
+  .when { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); padding-top: 4px; }
+  .row h3 { font-size: 0.98rem; font-weight: 650; line-height: 1.3; }
+  .org { font-weight: 400; color: var(--dim); }
+  .loc { font-weight: 400; font-size: 0.78rem; color: var(--faint); margin-left: 6px; white-space: nowrap; }
+  .row > div > p { color: var(--dim); font-size: 0.88rem; margin-top: 3px; }
+  .row ul { margin: 6px 0 0 16px; font-size: 0.88rem; color: var(--ink); }
+  .row li { margin: 3px 0; padding-left: 2px; }
+  .row li::marker { color: var(--accent); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+
+  .skills { display: grid; grid-template-columns: 120px 1fr; gap: 6px 18px; font-size: 0.88rem; }
+  .skills dt { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); padding-top: 3px; }
+  .skills dd { color: var(--ink); }
+
+  .projects { list-style: none; font-size: 0.88rem; }
+  .projects li { padding: 6px 0; break-inside: avoid; }
+  .projects li + li { border-top: 1px solid var(--line); }
+  .projects strong { font-weight: 650; }
+  .projects em { color: var(--dim); font-style: normal; }
+  .projects .stack { display: block; font-family: var(--mono); font-size: 0.7rem; color: var(--faint); margin-top: 2px; }
+
+  .foot {
+    margin-top: 26px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    color: var(--faint);
+  }
+
+  @media (max-width: 720px) {
+    .sheet { margin: 0; padding: 32px 22px 40px; box-shadow: none; }
+    .head { flex-direction: column; align-items: flex-start; }
+    .contact { text-align: left; white-space: normal; }
+    .bar-actions { flex-wrap: wrap; }
+    .row { grid-template-columns: 1fr; gap: 2px; }
+    .two { grid-template-columns: 1fr; }
+    .skills { grid-template-columns: 1fr; gap: 2px 0; }
+    .skills dd { margin-bottom: 8px; }
+  }
+
+  @page { size: Letter; margin: 0.5in 0.55in; }
+
+  @media print {
+    html { font-size: 12px; }
+    body { background: #fff; line-height: 1.42; }
+    .bar { display: none; }
+    .sheet { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+    a { color: inherit; }
+    .head h1 { font-size: 1.7rem; }
+    h2 { margin-top: 13px; margin-bottom: 6px; }
+    .row { padding: 6px 0; }
+    .summary { margin: 12px 0 0; }
+    .row li { margin: 2px 0; }
+    .foot { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-inner">
+    <a href="../">&larr; Back to the portfolio</a>
+    <div class="bar-actions">
+      <a href="mailto:odinnmcloughlin@gmail.com">odinnmcloughlin@gmail.com</a>
+      <button type="button" onclick="window.print()">Print / save as PDF</button>
+    </div>
+  </div>
+</div>
+
+<main class="sheet">
+
+  <header class="head">
+    <div>
+      <h1>Odinn W. McLoughlin</h1>
+      <p class="role">Sales &amp; marketing operations &middot; software builder</p>
+    </div>
+    <ul class="contact">
+      <li>Buffalo, NY</li>
+      <li><a href="mailto:odinnmcloughlin@gmail.com">odinnmcloughlin@gmail.com</a></li>
+      <li><a href="tel:+15165028649">(516) 502-8649</a></li>
+      <li><a href="https://www.linkedin.com/in/odinn-mcloughlin-423668271/" target="_blank" rel="noopener">linkedin.com/in/odinn-mcloughlin-423668271</a></li>
+      <li><a href="../">Portfolio with live demos</a></li>
+    </ul>
+  </header>
+
+  <p class="summary">
+    I work at the intersection of sales, marketing, and software in the logistics industry.
+    Wherever I go, I find the process being done by hand and build the system that does it better:
+    outbound engines, integrations, internal tools, web, and creative production, all shipped
+    in-house and running in production today.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="row">
+    <div class="when">Dec 2025 &ndash; now</div>
+    <div>
+      <h3>Sales &amp; Marketing Coordinator <span class="org">&middot; NEXgistics</span><span class="loc">Buffalo, NY</span></h3>
+      <p>Cross-border third-party logistics: U.S. bonded warehousing and Canada&ndash;U.S. supply chains. Hired to run social accounts; now responsible for outbound, integrations, internal tools, web, and all creative.</p>
+      <ul>
+        <li>Architected the outbound sales engine end to end: dedicated sending domains with SPF/DKIM/DMARC, mailbox warming, Apollo sequences from ICP-matched lists, lead scoring into Zoho journeys, and AI reply classification that auto-converts interested replies into Contact, Account, and Deal. Hundreds of tailored emails a day, CAN-SPAM and CASL compliant.</li>
+        <li>Built the Sales Tracker, a private CRM with a mailbox intelligence engine, daily briefing dashboard, Kanban pipeline, quarter-over-quarter analytics with board exports, in-house meeting recorder with local transcription, business card scanner, and pricing hub.</li>
+        <li>Built Content Studio, a content production app with four voices, three formats, cited research, judged drafts, and per-run cost tracking. Grew three LinkedIn accounts from zero: two past 3,000 followers, the company's approaching 1,000.</li>
+        <li>Own client integrations with the warehouse management system across SFTP, EDI X12, REST APIs, Shopify, and CartRover; write custom scripting for client bridges and authored the gateway architecture record, per-client sheets, and new-integration checklist.</li>
+        <li>Took nexgistics.com from bare bones to fully built out: complete SEO metadata, LLM optimization for AI search, and a blog built from scratch in Concrete CMS. Root-caused a contact form silent for 11 months and recovered 26 stranded submissions, real leads among them.</li>
+        <li>Prospect, run discovery calls, quote, and close new accounts myself, including trade show floor work with structured post-show follow-up. Authored the bonded storage screening packet used to qualify customs-sensitive deals.</li>
+        <li>Produce every brand graphic and video in-house in Photoshop and DaVinci Resolve: blog covers, social graphics, facility spec videos, and the trade show commercial.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2023 &ndash; 2025</div>
+    <div>
+      <h3>Administrative Assistant &amp; Coach Manager <span class="org">&middot; UB Tutoring Department</span><span class="loc">Buffalo, NY</span></h3>
+      <ul>
+        <li>Managed a team of 30 academic coaches and ran daily office operations.</li>
+        <li>Designed the center's Responsible AI Usage module, which trains tutors to work with AI honestly in academic settings and remains in use today.</li>
+        <li>Concurrently researched in the Misinformation, Extremism, and Media Effects (MEME) lab; co-author on three AI research papers with lab members.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2016 &ndash; 2023</div>
+    <div>
+      <h3>Client Relations &amp; Project Coordinator <span class="org">&middot; Viking Air Systems</span><span class="loc">Long Island, NY</span></h3>
+      <p>Client communications and concurrent project coordination under tight deadlines.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2015 &ndash; 2022</div>
+    <div>
+      <h3>Decorative Artist &amp; Marketing Support <span class="org">&middot; Arlene McLoughlin Murals</span><span class="loc">Long Island, NY</span></h3>
+      <p>Commissioned decorative work, proposals and pricing, and studio marketing. Seven years of detail-critical work on deadline, and where Photoshop became a daily tool.</p>
+    </div>
+  </div>
+
+  <div class="two">
+    <div>
+      <h2>Education &amp; credentials</h2>
+      <div class="row">
+        <div class="when">2025</div>
+        <div>
+          <h3>M.A. Communication <span class="org">&middot; University at Buffalo</span></h3>
+          <p>GPA 3.92. Thesis: <em>Dating Through the Divide</em>, an original mixed-methods study of political identity and romantic partner selection, analyzed with ANOVA, ANCOVA, and regression in SPSS and R, with statistically significant findings.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2023</div>
+        <div>
+          <h3>B.A. Communication <span class="org">&middot; University at Buffalo</span></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">In progress</div>
+        <div>
+          <h3>U.S. Customs Broker License</h3>
+          <p>Exam prep in progress. Working knowledge of 19 CFR, HTSUS, ACE, and DOT compliance.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Code</dt>
+        <dd>Python, JavaScript/TypeScript, SQL, FastAPI, React, Next.js, Prisma</dd>
+        <dt>Integration</dt>
+        <dd>REST &amp; EDI X12, SFTP, OAuth2, Shopify, CartRover, Extensiv WMS</dd>
+        <dt>AI</dt>
+        <dd>LLM workflow design, Claude and local models, prompt layering, cost engineering</dd>
+        <dt>Sales &amp; CRM</dt>
+        <dd>Zoho One, Smartlead, Apollo, Clay, LinkedIn Sales Navigator, GlockApps</dd>
+        <dt>Creative</dt>
+        <dd>Adobe Photoshop, DaVinci Resolve, Concrete CMS, SEO</dd>
+        <dt>Research</dt>
+        <dd>SPSS &amp; R, study design, statistical analysis</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>Selected personal projects</h2>
+  <ul class="projects">
+    <li>
+      <strong>Trader</strong> <em>&middot; an autonomous paper-trading analyst with a pre-registered research lab and an execution bridge that refuses unsafe plans. Cohort research over 1,100+ journaled decisions; paper only by design.</em>
+      <span class="stack">Python &middot; pandas &middot; SQLite &middot; Alpaca API &middot; custom backtest engine &middot; web dashboard</span>
+    </li>
+    <li>
+      <strong>CBLE Prep</strong> <em>&middot; a customs broker exam study platform: 628 real past-exam questions, a faithful replica of the testing software, spaced repetition, and a body of federal law that keeps itself current.</em>
+      <span class="stack">Python &middot; FastAPI &middot; React PWA &middot; PDF ingestion &middot; local AI</span>
+    </li>
+    <li>
+      <strong>EVE</strong> <em>&middot; a private AI ecosystem on my own hardware: chat with auditable memory, hybrid local and cloud model routing, calendar, daily briefs, and a push notification gateway.</em>
+      <span class="stack">Python &middot; FastAPI &middot; React PWA &middot; local LLMs &middot; service workers</span>
+    </li>
+  </ul>
+
+  <p class="foot">Interactive demos of every system above run in the <a href="../">portfolio</a>. Thesis available for <a href="../assets/odinn-mcloughlin-thesis.pdf" download>download</a>.</p>
+
+</main>
+
+</body>
+</html>

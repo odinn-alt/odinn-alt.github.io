@@ -5,6 +5,10 @@ frameworks, no trackers — three files (`index.html`, `styles.css`, `demos.js`)
 All demos are client-side simulations with canned data: no network calls,
 no APIs, no connection to any real system.
 
+`Resume/index.html` is a self-contained, print-ready resume (light theme, Letter
+page setup) linked from the nav and the Background section. Use the "Print /
+save as PDF" button on that page to export it.
+
 ## Run locally
 
 Open `index.html` directly in a browser (everything works from `file://`),

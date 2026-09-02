@@ -1925,6 +1925,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 14px;
 }
 .bg-label-gap { margin-top: 30px; }
+.bg-resume { float: right; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0; text-transform: none; }
 
 .cv-row {
   display: grid;
