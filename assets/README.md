@@ -1,14 +1,22 @@
 # Assets
 
-- `portrait.jpg` — NOT YET ADDED. Drop a photo of yourself here (roughly 4:5
-  portrait crop, under ~300 KB) and the About section picks it up automatically.
-  Until then a monogram placeholder shows.
-- `odinn-mcloughlin-thesis.docx` — the master's thesis, linked from About and
-  Background. Swap in a PDF later if preferred (update the two links in
-  index.html from .docx to .pdf).
-- `creative/` — published blog covers and social graphics shown in the gallery.
+| Path | Used by |
+|------|---------|
+| `portrait.jpg` | About section photo. If it fails to load, `demos.js` shows the "OM" monogram instead. |
+| `odinn-mcloughlin-thesis.pdf` | Thesis download, linked from About and Background. |
+| `creative/blog-*.jpg` | Blog cover images in the Creative gallery. |
+| `creative/design-*.jpg`, `graphic-*.jpg`, `tradeshow-*.jpg` | Design and event graphics in the Creative gallery. |
+| `creative/video-*.mp4` + matching `*-poster.jpg` | Video reel entries; the poster is the pre-play frame. |
 
-If media gets added later (e.g. captures of work systems for the day-job
-section), sanitize before committing: no API keys, tokens, real account
-values, email contents, phone numbers, customer names, or local network
-details (ports, hostnames) visible in any capture. This repo is public.
+Keep portrait and gallery images under roughly 300 KB each. Videos are the
+only large files in the repo.
+
+File names are public URLs on the live site. Rename or move a file only if
+you also update every reference in `index.html`, and expect any shared link
+to the old name to break.
+
+## Before committing any new media
+
+This repo is public. Check that nothing in the file shows API keys, tokens,
+real account values, email contents, phone numbers, customer names, or local
+network details such as ports and hostnames.
